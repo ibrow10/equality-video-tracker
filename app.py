@@ -80,4 +80,6 @@ def viewings():
     return render_template('viewings.html', viewings=viewings)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # This makes it work on Replit
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
